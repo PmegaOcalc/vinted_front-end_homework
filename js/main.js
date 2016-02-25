@@ -28,7 +28,7 @@ $(function($, dribbbleWall) {
     $('.item-favourite').on('click', function() {
       toggleFavourite($(this).parent().find('.heart'));
     });
-  }
+  };
 
   dribbbleWall.loadItems = function loadItems() {
     var url = 'https://api.dribbble.com/v1/users/' + username + '/shots?access_token=' + accessToken + '&page=' + page + '&callback=?';
@@ -59,7 +59,7 @@ $(function($, dribbbleWall) {
         dribbbleWall.init();
       }
     });
-  }
+  };
 
   dribbbleWall.loadItems();
 
