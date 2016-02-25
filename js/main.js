@@ -37,6 +37,25 @@ $(function($, dribbbleWall) {
     $('.container').append(newItems);
   }
 
+  function createItem(item) {
+    return `
+      <div class="item">
+        <img class="item-background" src="` + item.images.hidpi + `">
+        <div class="item-overlay">
+          <div class="item-name">
+            ` + item.title + `
+          </div>
+          <div class="item-author">
+            ` + username + `
+          </div>
+          <br>
+          <img class="heart" src="img/heart.svg" alt="heart">
+          <input class="item-favourite" type="button" value="Favourite">
+        </div>
+      </div>
+    `;
+  }
+
   dribbbleWall.loadItems = function loadItems() {
     var url = 'https://api.dribbble.com/v1/users/' + username + '/shots?access_token=' + accessToken + '&page=' + page + '&callback=?';
     $.getJSON(url, function(resp) {
@@ -44,23 +63,7 @@ $(function($, dribbbleWall) {
       if (resp.data.length > 0) {
         var newItems = '';
         $.each(resp.data.reverse(), function(i, item) {
-          newItems +=
-            `
-              <div class="item">
-                <img class="item-background" src="` + item.images.hidpi + `">
-                <div class="item-overlay">
-                  <div class="item-name">
-                    ` + item.title + `
-                  </div>
-                  <div class="item-author">
-                    ` + username + `
-                  </div>
-                  <br>
-                  <img class="heart" src="img/heart.svg" alt="heart">
-                  <input class="item-favourite" type="button" value="Favourite">
-                </div>
-              </div>
-            `;
+          newItems += createItem(item);
         });
         appendNewItem(newItems);
         dribbbleWall.init();
