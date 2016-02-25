@@ -33,6 +33,10 @@ $(function($, dribbbleWall) {
     });
   };
 
+  function appendNewItem(newItems) {
+    $('.container').append(newItems);
+  }
+
   dribbbleWall.loadItems = function loadItems() {
     var url = 'https://api.dribbble.com/v1/users/' + username + '/shots?access_token=' + accessToken + '&page=' + page + '&callback=?';
     $.getJSON(url, function(resp) {
@@ -58,7 +62,7 @@ $(function($, dribbbleWall) {
               </div>
             `;
         });
-        $('.container').append(newItems);
+        appendNewItem(newItems);
         dribbbleWall.init();
       }
     });
