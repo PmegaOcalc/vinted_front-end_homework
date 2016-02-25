@@ -35,8 +35,9 @@ $(function($, dribbbleWall) {
     $.getJSON(url, function(resp) {
       page += 1;
       if (resp.data.length > 0) {
+        var newItems = ''
         $.each(resp.data.reverse(), function(i, item) {
-          $('.container').append(
+          newItems +=
             `
               <div class="item">
                 <img class="item-background" src="` + item.images.hidpi + `">
@@ -52,9 +53,9 @@ $(function($, dribbbleWall) {
                   <input class="item-favourite" type="button" value="Favourite">
                 </div>
               </div>
-            `
-          );
+            `;
         });
+        $('.container').append(newItems);
         dribbbleWall.init();
       }
     });
