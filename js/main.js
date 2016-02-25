@@ -8,8 +8,9 @@ $(function($, dribbbleWall) {
 
   dribbbleWall.init = function init() {
     function blurToggle(elem) {
-      $('.blur').removeClass('blur');
-      elem.addClass('blur');
+      var className = 'blur';
+      $('.blur').removeClass(className);
+      elem.addClass(className);
     }
 
     $('.item-overlay').on('mouseover click', function() {
