@@ -38,7 +38,7 @@ $(function($, dribbbleWall) {
     $.getJSON(url, function(resp) {
       page += 1;
       if (resp.data.length > 0) {
-        var newItems = ''
+        var newItems = '';
         $.each(resp.data.reverse(), function(i, item) {
           newItems +=
             `
