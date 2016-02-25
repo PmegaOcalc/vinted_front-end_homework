@@ -2,6 +2,8 @@ var dribbbleWall = dribbbleWall || {};
 
 $(function($, dribbbleWall) {
 
+  'use strict';
+
   var username = 'Tusk';
   var accessToken = 'd287e55ef1f607c0706dc069ac156b6116cd03dcf4463b26b5eb0c3b9270b378';
   var page = 1;
