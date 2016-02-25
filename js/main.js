@@ -80,7 +80,7 @@ $(function($, dribbbleWall) {
 
   window.onscroll = debounce(function(ev) {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        dribbbleWall.loadItems();
+      dribbbleWall.loadItems();
     }
   }, 250, false);
 
