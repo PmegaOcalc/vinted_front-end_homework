@@ -17,10 +17,11 @@ $(function($, dribbbleWall) {
     });
 
     function toggleFavourite(heart) {
-      if (heart.hasClass('favourited')) {
-        heart.removeClass('favourited');
+      var className = 'favourited';
+      if (heart.hasClass(className)) {
+        heart.removeClass(className);
       } else {
-        heart.addClass('favourited');
+        heart.addClass(className);
       }
     }
 
