@@ -41,7 +41,6 @@ $item-width-px: 575px;
 }
 
 $item-width-md: (100px - $margin-ratio - 8px) / 2px * 1%;
-$item-width-lg: (100px - $margin-ratio - 8px) / 3px * 1%;
 
 @media (min-width: 768px) and (max-width: 1280px) {
   .item {
@@ -51,7 +50,7 @@ $item-width-lg: (100px - $margin-ratio - 8px) / 3px * 1%;
 
 @media (min-width: 1280px) {
   .item {
-    width: $item-width-lg;
+    width: $item-width-px;
   }
 }
 
